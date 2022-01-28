@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Desarrollos/curso/Stores/app/src/main/res/drawable/states_cb_favorite.xml" value="0.37083333333333335" />
+        <entry key="..\:/Desarrollos/curso/Stores/app/src/main/res/layout/activity_main.xml" value="0.340625" />
+        <entry key="..\:/Desarrollos/curso/Stores/app/src/main/res/layout/fragment_edit_store.xml" value="0.35052083333333334" />
+        <entry key="..\:/Desarrollos/curso/Stores/app/src/main/res/layout/item_store.xml" value="0.3546875" />
+        <entry key="..\:/Desarrollos/curso/Stores/app/src/main/res/menu/menu_save.xml" value="0.35052083333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

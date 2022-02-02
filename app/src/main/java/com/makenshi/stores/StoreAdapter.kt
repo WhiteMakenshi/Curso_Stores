@@ -74,7 +74,7 @@ class StoreAdapter(private var stores: MutableList<StoreEntity>, private var lis
 
         fun setListener(storeEntity: StoreEntity) {
             with(binding.root) {
-                setOnClickListener { listener.OnClick(storeEntity.id) }
+                setOnClickListener { listener.onClick(storeEntity.id) }
                 setOnLongClickListener {
                     listener.onDeleteStore(storeEntity)
                     true
@@ -82,7 +82,7 @@ class StoreAdapter(private var stores: MutableList<StoreEntity>, private var lis
             }
 
             binding.cbFavorite.setOnClickListener {
-                listener.OnFavoriteStore(storeEntity)
+                listener.onFavoriteStore(storeEntity)
             }
         }
     }

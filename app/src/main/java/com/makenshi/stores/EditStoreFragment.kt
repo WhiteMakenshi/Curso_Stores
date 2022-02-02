@@ -28,7 +28,7 @@ class EditStoreFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
 
         mBinding = FragmentEditStoreBinding.inflate(inflater, container, false)
 
@@ -183,29 +183,29 @@ class EditStoreFragment : Fragment() {
         return isValid
     }
 
-    private fun validateFields(): Boolean {
-        var isValid = true
-
-        if (mBinding.etPhotoUrl.text.toString().trim().isEmpty()) {
-            mBinding.tilPhotoUrl.error = getString(R.string.helper_required)
-            mBinding.etPhotoUrl.requestFocus()
-            isValid = false
-        }
-
-        if (mBinding.etPhone.text.toString().trim().isEmpty()) {
-            mBinding.tilPhone.error = getString(R.string.helper_required)
-            mBinding.etPhone.requestFocus()
-            isValid = false
-        }
-
-        if (mBinding.etName.text.toString().trim().isEmpty()) {
-            mBinding.tilName.error = getString(R.string.helper_required)
-            mBinding.etName.requestFocus()
-            isValid= false
-        }
-
-        return isValid
-    }
+//    private fun validateFields(): Boolean {
+//        var isValid = true
+//
+//        if (mBinding.etPhotoUrl.text.toString().trim().isEmpty()) {
+//            mBinding.tilPhotoUrl.error = getString(R.string.helper_required)
+//            mBinding.etPhotoUrl.requestFocus()
+//            isValid = false
+//        }
+//
+//        if (mBinding.etPhone.text.toString().trim().isEmpty()) {
+//            mBinding.tilPhone.error = getString(R.string.helper_required)
+//            mBinding.etPhone.requestFocus()
+//            isValid = false
+//        }
+//
+//        if (mBinding.etName.text.toString().trim().isEmpty()) {
+//            mBinding.tilName.error = getString(R.string.helper_required)
+//            mBinding.etName.requestFocus()
+//            isValid= false
+//        }
+//
+//        return isValid
+//    }
 
     private fun hideKeyboard() {
         val imm = mActivity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager

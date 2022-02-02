@@ -1,12 +1,11 @@
 package com.makenshi.stores
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.URLUtil
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.makenshi.stores.databinding.ActivityMainBinding
@@ -72,14 +71,14 @@ class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
     /**
      * OnClickListener
      * */
-    override fun OnClick(storeId: Long) {
+    override fun onClick(storeId: Long) {
         val args = Bundle()
         args.putLong(getString(R.string.arg_id), storeId)
 
         launchEditFragment(args)
     }
 
-    override fun OnFavoriteStore(storeEntity: StoreEntity) {
+    override fun onFavoriteStore(storeEntity: StoreEntity) {
         storeEntity.isFavorite = !storeEntity.isFavorite
         doAsync {
             StoreApplication.database.storeDao().updateStore(storeEntity)
@@ -95,7 +94,7 @@ class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.dialog_options_title)
             .setItems(items
-            ) { dialogInterface, i ->
+            ) { _, i ->
                 when (i) {
                     0 -> confirmDelete(storeEntity)
                     1 -> dial(storeEntity.phone)
@@ -108,7 +107,7 @@ class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
     private fun confirmDelete(storeEntity: StoreEntity) {
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.dialog_delete_title)
-            .setPositiveButton(R.string.dialog_delete_confirm) { dialogInterface, i ->
+            .setPositiveButton(R.string.dialog_delete_confirm) { _, _ ->
                 doAsync {
                     StoreApplication.database.storeDao().deleteStore(storeEntity)
                     uiThread {
@@ -145,8 +144,6 @@ class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
                 startActivity(websiteIntent)
             else
                 Toast.makeText(this, R.string.main_error_no_resolve, Toast.LENGTH_LONG).show()
-        } else {
-
         }
     }
 
